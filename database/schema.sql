@@ -1,5 +1,5 @@
 -- Base de datos para ALARA - Sistema de Venta de Autos de Lujo
--- Ejecutar este script en MySQL para crear las tablas necesarias
+-- VERSIÓN CORREGIDA: Soluciona el problema con 'condition' como palabra reservada
 
 CREATE DATABASE IF NOT EXISTS alara_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE alara_db;
@@ -20,7 +20,7 @@ CREATE TABLE users (
     INDEX idx_role (role)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Tabla de vehículos
+-- Tabla de vehículos (sin el campo 'condition' problemático)
 CREATE TABLE cars (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock_number VARCHAR(20) UNIQUE NOT NULL,
@@ -37,7 +37,6 @@ CREATE TABLE cars (
     seats INT DEFAULT 5,
     description TEXT,
     features JSON,
-    condition ENUM('nuevo', 'seminuevo', 'usado') DEFAULT 'seminuevo',
     vin VARCHAR(17),
     location VARCHAR(100),
     is_featured BOOLEAN DEFAULT FALSE,
@@ -103,12 +102,12 @@ CREATE TABLE credit_applications (
     employment_years INT,
     car_id INT NOT NULL,
     down_payment DECIMAL(12, 2) NOT NULL,
-    requested_term INT NOT NULL, -- En meses
+    requested_term INT NOT NULL,
     status ENUM('Enviado', 'En Revisión', 'Aprobado', 'Rechazado', 'Documentos Pendientes') DEFAULT 'Enviado',
     reviewed_by INT,
     reviewed_at DATETIME,
     notes TEXT,
-    documents JSON, -- Almacena rutas de documentos subidos
+    documents JSON,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE,
@@ -191,52 +190,3 @@ INSERT INTO leads (name, email, phone, message, source, car_id, budget) VALUES
 ('Juan Pérez', 'juan.perez@email.com', '777-123-4567', 'Me interesa el Mercedes C300', 'web', 1, 800000),
 ('María García', 'maria.garcia@email.com', '777-234-5678', 'Quisiera agendar una prueba de manejo del BMW X3', 'whatsapp', 2, 750000),
 ('Carlos López', 'carlos.lopez@email.com', '777-345-6789', '¿Tienen opciones de financiamiento?', 'facebook', NULL, 600000);
-
--- Crear vistas útiles
-
--- Vista de inventario con resumen
-CREATE VIEW v_inventory_summary AS
-SELECT 
-    c.id,
-    c.stock_number,
-    c.brand,
-    c.model,
-    c.year,
-    c.price,
-    c.mileage,
-    c.is_available,
-    c.is_featured,
-    c.views,
-    c.main_image,
-    COUNT(DISTINCT ci.id) as image_count,
-    COUNT(DISTINCT l.id) as lead_count
-FROM cars c
-LEFT JOIN car_images ci ON c.id = ci.car_id
-LEFT JOIN leads l ON c.id = l.car_id
-GROUP BY c.id;
-
--- Vista de leads con información del vehículo
-CREATE VIEW v_leads_with_cars AS
-SELECT 
-    l.*,
-    c.brand as car_brand,
-    c.model as car_model,
-    c.year as car_year,
-    c.price as car_price,
-    u.name as assigned_to_name
-FROM leads l
-LEFT JOIN cars c ON l.car_id = c.id
-LEFT JOIN users u ON l.assigned_to = u.id;
-
--- Vista de solicitudes de crédito con detalles
-CREATE VIEW v_credit_applications_detail AS
-SELECT 
-    ca.*,
-    c.brand as car_brand,
-    c.model as car_model,
-    c.year as car_year,
-    c.price as car_price,
-    u.name as reviewer_name
-FROM credit_applications ca
-JOIN cars c ON ca.car_id = c.id
-LEFT JOIN users u ON ca.reviewed_by = u.id;

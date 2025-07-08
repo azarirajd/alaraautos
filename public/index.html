@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALARA | Venta de Autos de Lujo Seminuevos</title>
+    <meta name="description" content="En ALARA, redefinimos la compra de autos de lujo seminuevos. Descubre nuestro inventario exclusivo y vive una experiencia de compra inigualable.">
+    
+    <!-- CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">ALARA</a>
+                
+                <nav class="nav-menu">
+                    <a href="/" class="nav-link">Inicio</a>
+                    <a href="/inventario.html" class="nav-link">Inventario</a>
+                    <a href="/financiamiento.html" class="nav-link">Financiamiento</a>
+                    <a href="/nosotros.html" class="nav-link">Nosotros</a>
+                    <a href="/contacto.html" class="nav-link">Contacto</a>
+                    <a href="/login" class="cta-button">Portal Admin</a>
+                </nav>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-on-scroll fade-up">
+                    <h1>Tu próximo auto de <span>lujo</span> te está esperando</h1>
+                    <p class="subtitle">Descubre nuestra exclusiva selección de vehículos premium seminuevos con garantía extendida y las mejores opciones de financiamiento.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="/inventario.html" class="cta-button">Ver Inventario</a>
+                        <a href="#calculator" class="cta-button cta-secondary">Calcular Presupuesto</a>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            </svg>
+                            <span>Garantía Extendida</span>
+                        </div>
+                        <div class="trust-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            <span>150 Puntos de Inspección</span>
+                        </div>
+                        <div class="trust-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                            </svg>
+                            <span>Financiamiento Flexible</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual animate-on-scroll">
+                    <div class="car-showcase">
+                        <div class="showcase-content">
+                            <h3>Inventario Premium</h3>
+                            <div class="showcase-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number count-up" data-count="150">0</span>
+                                    <span class="stat-label">Vehículos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number count-up" data-count="15">0</span>
+                                    <span class="stat-label">Marcas Premium</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number count-up" data-count="98">0</span>
+                                    <span class="stat-label">% Satisfacción</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-content">
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <div>
+                        <div class="trust-number count-up" data-count="3">0</div>
+                        <div>Sucursales</div>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24">
+                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                    </svg>
+                    <div>
+                        <div class="trust-number count-up" data-count="10">0</div>
+                        <div>Años de Experiencia</div>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                    <div>
+                        <div class="trust-number count-up" data-count="5000">0</div>
+                        <div>Clientes Satisfechos</div>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                    </svg>
+                    <div>
+                        <div class="trust-number count-up" data-count="1500">0</div>
+                        <div>Autos Vendidos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services animate-on-scroll">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegir ALARA?</h2>
+                <p>Ofrecemos una experiencia de compra única con servicios diseñados para tu comodidad</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-child">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                    </svg>
+                    <h3>Garantía Extendida</h3>
+                    <p>Todos nuestros vehículos incluyen garantía extendida de hasta 2 años para tu tranquilidad.</p>
+                    <a href="/garantia" class="service-link">
+                        Conocer más <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card animate-child">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    <h3>Inspección Certificada</h3>
+                    <p>150 puntos de inspección realizados por expertos para garantizar la calidad de cada vehículo.</p>
+                    <a href="/inspeccion" class="service-link">
+                        Ver proceso <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card animate-child">
+                    <svg class="service-icon" viewBox="0 0 24 24">
+                        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                    </svg>
+                    <h3>Financiamiento a tu Medida</h3>
+                    <p>Planes flexibles con las mejores tasas del mercado. Aprobación en 24 horas.</p>
+                    <a href="/financiamiento.html" class="service-link">
+                        Calcular ahora <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator animate-on-scroll">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h2>Calcula tu presupuesto ideal</h2>
+                    <p>Descubre qué vehículos se ajustan a tu presupuesto y opciones de financiamiento</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <form id="budget-calculator">
+                        <div class="calculator-grid">
+                            <div class="form-group">
+                                <label>¿Cuál es tu presupuesto?</label>
+                                <input type="number" id="budget-amount" class="form-input" 
+                                       placeholder="500000" min="100000" step="10000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Enganche (%)</label>
+                                <select id="down-payment-percentage" class="form-select">
+                                    <option value="10">10%</option>
+                                    <option value="20" selected>20%</option>
+                                    <option value="30">30%</option>
+                                    <option value="40">40%</option>
+                                    <option value="50">50%</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Plazo (meses)</label>
+                                <select id="loan-term-calc" class="form-select">
+                                    <option value="12">12 meses</option>
+                                    <option value="24">24 meses</option>
+                                    <option value="36">36 meses</option>
+                                    <option value="48" selected>48 meses</option>
+                                    <option value="60">60 meses</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Tipo de vehículo</label>
+                                <select class="form-select">
+                                    <option>Todos</option>
+                                    <option>Sedán</option>
+                                    <option>SUV</option>
+                                    <option>Coupé</option>
+                                    <option>Hatchback</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="calculate-btn" class="calculator-button">
+                            Calcular opciones
+                        </button>
+                    </form>
+                    
+                    <div id="calculator-results" class="calculator-results"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Vehicles -->
+    <section class="inventory animate-on-scroll">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vehículos Destacados</h2>
+                <p>Descubre nuestra selección especial de autos de lujo</p>
+            </div>
+            
+            <div id="featured-vehicles" class="cars-grid">
+                <!-- Los vehículos se cargarán dinámicamente vía JavaScript -->
+                <div class="loading-placeholder">
+                    <div class="spinner"></div>
+                    <p>Cargando vehículos...</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="/inventario.html" class="cta-button">
+                    Ver todo el inventario <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials animate-on-scroll">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>La satisfacción de nuestros clientes es nuestra mejor carta de presentación</p>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <span class="quote-icon">"</span>
+                            <p class="testimonial-text">
+                                Excelente servicio y atención. Encontré el auto de mis sueños con un financiamiento 
+                                que se ajustó perfectamente a mi presupuesto. El proceso fue rápido y transparente.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-image">MG</div>
+                                <div class="author-info">
+                                    <h4>María González</h4>
+                                    <p>BMW X3 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <span class="quote-icon">"</span>
+                            <p class="testimonial-text">
+                                La garantía extendida me dio mucha tranquilidad. El equipo de ALARA fue muy profesional 
+                                y me ayudaron en cada paso del proceso. Totalmente recomendado.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-image">CR</div>
+                                <div class="author-info">
+                                    <h4>Carlos Ramírez</h4>
+                                    <p>Mercedes-Benz C300 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <span class="quote-icon">"</span>
+                            <p class="testimonial-text">
+                                Después de visitar varios lotes, ALARA fue la única que me ofreció transparencia total 
+                                en el historial del vehículo y opciones reales de financiamiento.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-image">AM</div>
+                                <div class="author-info">
+                                    <h4>Ana Martínez</h4>
+                                    <p>Audi Q5 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact animate-on-scroll">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>¿Listo para encontrar tu próximo auto?</h2>
+                    <p>Nuestro equipo de expertos está aquí para ayudarte a hacer realidad tu sueño de manejar el auto de lujo que mereces.</p>
+                    
+                    <ul class="contact-benefits">
+                        <li>Asesoría personalizada sin compromiso</li>
+                        <li>Prueba de manejo a domicilio</li>
+                        <li>Proceso de compra 100% transparente</li>
+                    </ul>
+                    
+                    <div class="contact-methods">
+                        <a href="tel:+527771234567" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>Llamar ahora</span>
+                        </a>
+                        
+                        <a href="https://wa.me/527771234567" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="form-title">Contáctanos ahora</h3>
+                    <form id="main-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nombre completo *</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono *</label>
+                                <input type="tel" name="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>Email *</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>Mensaje</label>
+                            <textarea name="message" class="form-control" rows="4" 
+                                      placeholder="Cuéntanos qué tipo de vehículo estás buscando..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ALARA</h3>
+                    <p>Tu destino premium para autos de lujo seminuevos. Calidad, confianza y servicio excepcional.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="/inventario.html">Inventario</a></li>
+                        <li><a href="/financiamiento.html">Financiamiento</a></li>
+                        <li><a href="/garantia">Garantía</a></li>
+                        <li><a href="/nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="/prueba-manejo">Prueba de Manejo</a></li>
+                        <li><a href="/inspeccion">Inspección Certificada</a></li>
+                        <li><a href="/seguro">Seguro Vehicular</a></li>
+                        <li><a href="/mantenimiento">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt"></i> Av. Principal 123, Temixco, Morelos</li>
+                        <li><i class="bi bi-phone"></i> +52 777 123 4567</li>
+                        <li><i class="bi bi-envelope"></i> info@alara.mx</li>
+                        <li><i class="bi bi-clock"></i> Lun-Vie: 9:00-19:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 ALARA. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#" data-legal="privacy-modal">Aviso de Privacidad</a>
+                    <a href="#" data-legal="terms-modal">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float" data-phone="527771234567">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </div>
+
+    <!-- Modales Legales -->
+    <div id="privacy-modal" class="legal-modal">
+        <div class="legal-content">
+            <span class="close-legal">&times;</span>
+            <h2>Aviso de Privacidad</h2>
+            <p>ALARA, con domicilio en Av. Principal 123, Temixco, Morelos, es responsable del tratamiento de sus datos personales...</p>
+            <!-- Agregar contenido completo del aviso de privacidad -->
+        </div>
+    </div>
+
+    <div id="terms-modal" class="legal-modal">
+        <div class="legal-content">
+            <span class="close-legal">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Los presentes términos y condiciones regulan el uso del sitio web www.alara.mx...</p>
+            <!-- Agregar contenido completo de términos y condiciones -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/scripts.js"></script>
+    <script src="/js/forms-integration.js"></script>
+    
+    <!-- Script para cargar vehículos destacados -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cargar vehículos destacados
+        fetch('/api/inventory/public', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({featured: true, limit: 3})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.data.length > 0) {
+                const container = document.getElementById('featured-vehicles');
+                let html = '';
+                
+                data.data.forEach(car => {
+                    html += `
+                        <div class="car-card animate-child">
+                            <div class="car-image">
+                                <img src="/uploads/cars/${car.main_image || 'placeholder.jpg'}" 
+                                     alt="${car.brand} ${car.model}" loading="lazy">
+                                ${car.is_featured ? '<span class="availability-badge">Destacado</span>' : ''}
+                            </div>
+                            <div class="car-info">
+                                <h3 class="car-model">${car.brand} ${car.model}</h3>
+                                <p class="car-price">
+                                    ${formatCurrency(car.price)}
+                                    <span>• ${car.year} • ${car.formatted_mileage}</span>
+                                </p>
+                                <a href="/vehiculo.html?id=${car.id}" class="cta-button">
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+        })
+        .catch(error => {
+            console.error('Error cargando vehículos:', error);
+        });
+    });
+    </script>
+</body>
+</html>

@@ -40,6 +40,17 @@ $request_method = $_SERVER['REQUEST_METHOD'];
 // Eliminar query string de la URI
 $request_uri = strtok($request_uri, '?');
 
+// Si estamos en un subdirectorio, ajustar la URI
+$script_name = $_SERVER['SCRIPT_NAME'];
+$base_path = dirname($script_name);
+if ($base_path !== '/' && $base_path !== '\\') {
+    // Eliminar el path base de la URI
+    $request_uri = substr($request_uri, strlen($base_path));
+    if (empty($request_uri)) {
+        $request_uri = '/';
+    }
+}
+
 // Router simple
 $routes = require APP_PATH . '/routes/web.php';
 
